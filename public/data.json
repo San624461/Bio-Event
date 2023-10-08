@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "eventName": "Biotech Expo 2023",
+    "image": "https://i.ibb.co/HHqfQCt/img-1.jpg",
+    "price": 50.0,
+    "description": "Join us at the Biotech Expo 2023 to explore the latest advancements in biotechnology. This event is a gathering of leading scientists, researchers, and innovators in the field. Attendees will have the opportunity to participate in interactive workshops, listen to keynote presentations, and network with professionals shaping the future of biotech.",
+    "location": "USA, California, San Francisco Convention Center",
+    "date": "May 15-16, 2023",
+    "intro": "Experience cutting-edge biotech innovations at Biotech Expo 2023. Join industry leaders and experts in a series of workshops exploring the future of biotechnology."
+  },
+  {
+    "id": 2,
+    "eventName": "Genetic Engineering Symposium",
+    "image": "https://i.ibb.co/DKxVpWp/img-2.jpg",
+    "price": 35.0,
+    "description": "Welcome to the Genetic Engineering Symposium! Dive deep into the fascinating world of genetic engineering with our panel of experts. Learn about gene editing techniques, CRISPR technology, and the ethical implications of genetic manipulation. Whether you're a seasoned researcher or just curious about this cutting-edge field, this symposium has something for everyone.",
+    "location": "USA, New York, New York Convention Center",
+    "date": "June 10-11, 2023",
+    "intro": "Delve into the world of genetic engineering at the Genetic Engineering Symposium. Learn about the latest gene-editing techniques and ethical considerations in this captivating event."
+  },
+  {
+    "id": 3,
+    "eventName": "Biotech Startup Pitch Competition",
+    "image": "https://i.ibb.co/4jfQ9sY/img-3.jpg",
+    "price": 20.0,
+    "description": "Watch promising biotech startups pitch their innovative ideas to investors at the Biotech Startup Pitch Competition. From revolutionary drug discovery platforms to sustainable bioprocessing technologies, these startups are pushing the boundaries of biotechnology. Join us to witness the future of biotech entrepreneurship.",
+    "location": "USA, California, San Francisco Convention Center",
+    "date": "July 5-6, 2023",
+    "intro": "Be part of the excitement at the Biotech Startup Pitch Competition. Witness groundbreaking pitches from startups shaping the future of biotechnology."
+  },
+  {
+    "id": 4,
+    "eventName": "Bioinformatics Workshop",
+    "image": "https://i.ibb.co/wMSY8L4/img-4.jpg",
+    "price": 30.0,
+    "description": "Discover the power of bioinformatics in unraveling the mysteries of life sciences at our Bioinformatics Workshop. This hands-on workshop will teach you how to analyze and interpret biological data using computational tools and algorithms. Whether you're a biologist, geneticist, or data scientist, this workshop will enhance your skills in bioinformatics.",
+    "location": "USA, Massachusetts, Boston Conference Center",
+    "date": "August 20-21, 2023",
+    "intro": "Enhance your bioinformatics skills at the Bioinformatics Workshop. Dive into the world of data analysis in the life sciences."
+  },
+  {
+    "id": 5,
+    "eventName": "Biotech Career Fair",
+    "image": "https://i.ibb.co/Bc8ynxT/img-5.jpg",
+    "price": 15.0,
+    "description": "Looking to kickstart your career in the biotech industry? Don't miss the Biotech Career Fair! Connect with leading biotech companies, submit your resume, and explore job opportunities. Attend informative career panels and gain insights from industry professionals. Whether you're a recent graduate or an experienced professional, this fair is your gateway to a rewarding career.",
+    "location": "USA, California, San Jose Convention Center",
+    "date": "September 12-13, 2023",
+    "intro": "Launch your biotech career at the Biotech Career Fair. Connect with industry leaders and explore job opportunities in the thriving biotech sector."
+  },
+  {
+    "id": 6,
+    "eventName": "Biomedical Research Conference",
+    "image": "https://i.ibb.co/cJc2zPp/img-6.jpg",
+    "price": 40.0,
+    "description": "Join us at the Biomedical Research Conference to delve into the latest breakthroughs in biomedical science. Engage with renowned researchers, share your own discoveries, and collaborate on projects that can change lives. From cancer immunotherapy to regenerative medicine, this conference covers a wide range of topics at the forefront of biomedical research.",
+    "location": "USA, Maryland, Baltimore Convention Center",
+    "date": "October 8-9, 2023",
+    "intro": "Explore the latest breakthroughs in biomedical science at the Biomedical Research Conference. Engage with leading researchers and contribute to advancements in healthcare."
+  },
+  {
+    "id": 7,
+    "eventName": "Bioethics Panel Discussion",
+    "image": "https://i.ibb.co/WsCtC1Y/img-7.jpg",
+    "price": 10.0,
+    "description": "Participate in a thought-provoking Bioethics Panel Discussion that explores the complex ethical dilemmas in biotechnology. Our expert panelists will discuss issues such as gene editing ethics, bioprinting, and the implications of AI in healthcare. Join us for an enlightening conversation on the moral and societal aspects of biotechnology.",
+    "location": "USA, Washington D.C., Walter E. Washington Convention Center",
+    "date": "November 15-16, 2023",
+    "intro": "Engage in a thought-provoking exploration of bioethics at the Bioethics Panel Discussion. Join expert panelists in discussing the moral and societal implications of cutting-edge biotechnologies."
+  }
+]

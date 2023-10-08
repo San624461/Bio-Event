@@ -1,0 +1,5 @@
+#sidebar a.active{
+    color:#3F3A96;
+    text-decoration: underline;
+    font-weight: bold;
+}
