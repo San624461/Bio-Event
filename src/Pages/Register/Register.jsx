@@ -4,45 +4,46 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import toast from 'react-hot-toast';
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const { createUser } = useContext(AuthContext)
-    const [success, setSuccess] = useState('')
+    const handleSignUp = async (e) => {
+        e.preventDefault();
+        if (isSubmitting) return;
 
-    const [error, setError] = useState('')
-    const handleSignUp = e => {
-        e.preventDefault()
-        const email = e.target.email.value
-        const password = e.target.password.value
-        const firstname = e.target.first_name.value
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const firstname = e.target.first_name.value;
+        const lastName = e.target.last_name.value;
+        const photo = e.target.photo.value;
 
-        const lastName = e.target.last_name.value
-        const photo = e.target.photo.value
+        setError('');
+        setIsSubmitting(true);
 
-
-        setError('')
-        setSuccess('')
         if (/^(?!.*[A-Z])(?!.*[^A-Za-z0-9]).{6,}$/.test(password)) {
-            toast.error('Password Should be more than 6 characters, should contain a capital letter and a special character')
-            return;
+            toast.error('Password should be more than 6 characters, should contain a capital letter and a special character');
+            setIsSubmitting(false);
+        } else {
+            try {
+                const res = await createUser(email, password, firstname, lastName);
+                console.log(res.user);
+                toast.success('User Created successfully');
+            } catch (err) {
+                setError(err.message);
+                toast.error(err.message)
+            } finally {
+                setIsSubmitting(false);
+            }
         }
-
-
-        console.log(email, password)
-        //create user
-        createUser(email, password, firstname, lastName)
-            .then(res => {
-                console.log(res.user)
-                setSuccess('User Created successfully')
-            })
-            .catch(error => {
-                setError(error.message)
-            })
-    }
+    };
 
     return (
         <div>
             <h1 className='text-3xl text-center mb-4 text-blue-400 font-bold bg-gray-200 p-3'>Register Now</h1>
             <form onSubmit={handleSignUp}>
+
+
                 <div className="grid gap-6 mb-6 md:grid-cols-2">
 
                     <div>
@@ -80,15 +81,20 @@ const Register = () => {
                     </div>
                     <label htmlFor="remember" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" className="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
                 </div>
-                <button type="submit" className="text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+
+
+
+                <button
+                    type="submit"
+                    disabled={isSubmitting} // Disable the button while submitting
+                    className="text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    {isSubmitting ? 'Submitting...' : 'Submit'} {/* Change button text when submitting */}
+                </button>
+
+
             </form>
             <p className='text-lg mt-3'>Do not have an account <Link to='/login' className='font-semibold text-blue-400'>Log In here</Link></p>
-            {
-                error && toast.error(error)
-            }
-            {
-                success && toast.success('User Registered Successfully')
-            }
+           
         </div>
     );
 };
