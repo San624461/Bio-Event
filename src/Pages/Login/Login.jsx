@@ -5,8 +5,8 @@ import toast from 'react-hot-toast';
 import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-    const { signIn, googleLogin,createUser,user } = useContext(AuthContext);
-    // console.log(createUser)
+    const { signIn, googleLogin, createUser, user } = useContext(AuthContext);
+
 
     const [error, setError] = useState('');
     const location = useLocation()
@@ -19,12 +19,10 @@ const Login = () => {
 
         try {
             await signIn(email, password);
-            // Use toast.success to display a success message
             toast.success('Logged In successfully');
             navigate(location?.state ? location.state : '/')
         } catch (error) {
             setError(error.message);
-            // Use toast.error to display the error message
             toast.error(error.message);
         }
     };
@@ -32,12 +30,9 @@ const Login = () => {
     const handleGoogleSignIn = async () => {
         try {
             await googleLogin();
-            // Use toast.success to display a success message
             toast.success('Logged In successfully');
             navigate(location?.state ? location.state : '/')
         } catch (error) {
-            setError(error.message);
-            // Use toast.error to display the error message
             toast.error(error.message);
         }
     };

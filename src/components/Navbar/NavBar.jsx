@@ -1,18 +1,62 @@
 import { Link, NavLink } from "react-router-dom";
 import icon from '../../assets/bio-new-logo-color.svg'
 import './NavBar.css'
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import 'aos/dist/aos.css';
+import Aos from "aos";
+import toast from "react-hot-toast";
 
 const NavBar = () => {
 
+    useEffect(() => {
+        Aos.init({
+            duration: 1000,
+            offset: 200,
+            easing: 'ease-in-sine',
+            once: true,
+        });
+    }, []);
+
     const { user, logOut, createUser } = useContext(AuthContext)
-    console.log(user)
+    console.log(createUser)
     const handleSignOut = () => {
         logOut()
-            .then()
-            .catch()
+            .then(res => {
+                toast.success('User Logged Out successfully')
+            })
+            .catch(error => {
+                toast.error('Error Occured')
+            })
     }
+
+
+
+    const renderUserInfo = () => {
+        if (user) {
+            return (
+                <>
+                    {user.displayName && <p className="text-sm">{user.displayName}</p>}
+                    {user.email && (
+                        <div className="avatar ml-3">
+                            <div className="w-8 rounded-full">
+                                <img src={user.photoURL} alt="User Avatar" />
+                            </div>
+                        </div>
+                    )}
+                    <button
+                        onClick={handleSignOut}
+                        className="btn bg-blue-400 ml-3 text-white pb-3 pt-3 w-[80%]"
+                    >
+                        Sign Out
+                    </button>
+                </>
+            );
+        } else {
+            // Render something else or nothing while user data is loading
+            return null;
+        }
+    };
 
     const navLinks = <>
 
@@ -32,7 +76,7 @@ const NavBar = () => {
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
             }>Member</NavLink></li>
-       
+
 
 
 
@@ -42,7 +86,7 @@ const NavBar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 mt-6 mb-3" id="sidebar">
+        <div data-aos="slide-down" className="navbar bg-base-100 mt-6 mb-3" id="sidebar">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className=" lg:hidden">
@@ -71,36 +115,9 @@ const NavBar = () => {
 
 
 
-            <div className="ml-10 md:ml-32">
-            {user?.displayName && (
-                    <p className="text-sm">{user.displayName}</p>
-                )}
+            <div className="ml-20 md:ml-12 lg:ml-12  md:ml-60 mr-2 md:mr-0 lg:mr-0">
+                {renderUserInfo()}
 
-                {user?.email && (
-                    <div className="avatar ml-3">
-                        <div className="w-8 rounded-full">
-                            <img src={user.photoURL} alt="User Avatar" />
-                        </div>
-                    </div>
-                )}
-
-
-
-
-                {
-                    user ? <button
-                        onClick={handleSignOut} className="btn bg-blue-400 ml-3 text-white pb-3 pt-3 w-[80%]text-white">
-                        Sign Out
-                    </button>
-                        :
-
-
-                        <button className="btn bg-blue-400 ml-3 pb-3 pt-3 w-[80%] text-white">
-                            <Link to='/login'>Log In</Link>
-                        </button>
-                }
-                {
-                /* <button className="btn bg-white border-0"><FaSearch></FaSearch></button> */}
 
 
             </div>

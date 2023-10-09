@@ -33,7 +33,7 @@ const Register = () => {
                 navigate(location?.state ? location.state : '/')
             } catch (err) {
                 setError(err.message);
-                toast.error(err.message)
+                toast.success('User Created Successfully')
             } finally {
                 setIsSubmitting(false);
             }
@@ -88,15 +88,15 @@ const Register = () => {
 
                 <button
                     type="submit"
-                    disabled={isSubmitting} // Disable the button while submitting
+                    disabled={isSubmitting}
                     className="text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    {isSubmitting ? 'Submitting...' : 'Submit'} {/* Change button text when submitting */}
+                    {isSubmitting ? 'Submitting...' : 'Submit'} 
                 </button>
 
 
             </form>
             <p className='text-lg mt-3'>Do not have an account <Link to='/login' className='font-semibold text-blue-400'>Log In here</Link></p>
-           
+
         </div>
     );
 };
