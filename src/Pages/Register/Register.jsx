@@ -95,7 +95,7 @@ const Register = () => {
 
 
             </form>
-            <p className='text-lg mt-3'>Do not have an account <Link to='/login' className='font-semibold text-blue-400'>Log In here</Link></p>
+            <p className='text-lg mt-3'>Have an account <Link to='/login' className='font-semibold text-blue-400'>Log In here</Link></p>
 
         </div>
     );
