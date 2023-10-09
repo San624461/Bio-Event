@@ -5,8 +5,12 @@ import HomeSIgnUp from "../../components/HomeSignUp/HomeSIgnUp";
 // import Header from "../../components/Header/Header";
 
 const Home = () => {
+
+   
+
     return (
         <div >
+
            <Banner></Banner>
            <HomeSIgnUp></HomeSIgnUp>
            <ThreeSection></ThreeSection>
