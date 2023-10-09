@@ -17,4 +17,4 @@ Live Site :
 
 * When A user logs in ,they can see their display picture and name in the header section , and there are success and error notifications if something goes wrong. The password is specialized so that it can validate, where the password  must contain a special character , a capital letter and more than 6 character
 
-* News and Insights page contain some news related to biotechnology field and member page has some specific informations only for the logged in members. 
+* News and Insights page contain some news related to biotechnology field and member page has some specific information only for the logged in members. 
