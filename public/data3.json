@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "title": "Breakthrough in Gene Editing Technology",
+      "news_details": "Scientists have achieved a major breakthrough in CRISPR gene editing, opening new possibilities for treating genetic diseases. Researchers successfully edited the genes responsible for certain genetic disorders, offering hope to patients and medical professionals. This advancement is expected to revolutionize the field of precision medicine and may lead to the development of more effective therapies for a wide range of inherited conditions.",
+      "news_link": "https://www.broadinstitute.org/news/researchers-uncover-new-CRISPR-like-system-in-animals-that-can-edit-the-human-genome"
+    },
+    {
+      "id": 2,
+      "title": "COVID-19 Vaccine Development Update",
+      "news_details": "An update on the latest advancements in COVID-19 vaccine development and distribution worldwide. Several vaccines have received emergency use authorization and are being administered to combat the ongoing pandemic. Scientists and healthcare workers continue to work tirelessly to ensure the safety and efficacy of these vaccines, with a focus on global distribution to reach all corners of the world.",
+      "news_link": "https://www.pfizer.com/science/coronavirus/vaccine/rapid-progress"
+    },
+    {
+      "id": 3,
+      "title": "Biotech Company Announces Drug Discovery",
+      "news_details": "A leading biotech company announces a groundbreaking drug discovery that could revolutionize cancer treatment. The new drug targets specific cancer cells while minimizing side effects, offering potential benefits to cancer patients. This breakthrough comes after years of research and clinical trials, and it has the potential to extend the lives of many individuals diagnosed with cancer.",
+      "news_link": "https://www.eurekalert.org/news-releases/993844"
+    },
+    {
+      "id": 4,
+      "title": "Gene Therapy for Rare Diseases",
+      "news_details": "Researchers make significant progress in developing gene therapy for rare genetic disorders, offering hope to affected patients. Clinical trials have shown promising results, and this therapy could provide a new avenue for treatment. The potential impact of gene therapy extends beyond rare diseases, as it may pave the way for innovative treatments for more common conditions as well.",
+      "news_link": "https://rarediseases.org/gene-therapy/"
+    },
+    {
+      "id": 5,
+      "title": "New Drug Shows Promise in Alzheimer's Treatment",
+      "news_details": "A new experimental drug demonstrates promising results in early-stage clinical trials for Alzheimer's disease. The drug targets the underlying causes of Alzheimer's and aims to slow its progression. Researchers are cautiously optimistic about the potential of this drug, as it could provide relief to millions of individuals and their families affected by this devastating condition.",
+      "news_link": "https://www.health.com/new-alzheimers-drugs-2023-7693117#:~:text=Two%20new%20drugs%E2%80%94Eisai's%20Leqembi,being%20considered%20for%20FDA%20approval."
+    },
+    {
+      "id": 6,
+      "title": "Biotech Startup Secures Funding for AI Drug Discovery",
+      "news_details": "A biotech startup raises substantial funding to further develop AI-driven drug discovery technologies. The investment will accelerate research and development efforts in finding innovative drug candidates. The use of artificial intelligence in drug discovery has the potential to expedite the process of bringing life-saving medications to the market.",
+      "news_link": "https://techfundingnews.com/biotech-startup-founded-by-former-google-expert-secures-100m-for-gen-ai-drug-development/"
+    },
+    {
+      "id": 7,
+      "title": "CRISPR-Based COVID-19 Testing",
+      "news_details": "Scientists develop a rapid and highly accurate COVID-19 testing method using CRISPR technology. This testing approach offers quick results and enhances diagnostic capabilities during the pandemic. The widespread availability of such testing methods is crucial in managing the spread of the virus and protecting public health.",
+      "news_link": "https://www.frontiersin.org/articles/10.3389/fcimb.2021.663949/full"
+    },
+    {
+      "id": 8,
+      "title": "Regenerative Medicine Breakthrough",
+      "news_details": "Researchers achieve a groundbreaking milestone in regenerative medicine, paving the way for tissue and organ regeneration. This advancement holds great potential for patients in need of transplants and regenerative therapies. It opens new doors for addressing organ shortages and improving the quality of life for many individuals.",
+      "news_link": "https://phys.org/news/2023-05-breakthrough-stem-cell-therapy-masses.html"
+    },
+    {
+      "id": 9,
+      "title": "Biotech Industry Growth in 2023",
+      "news_details": "An in-depth overview of the expected growth and trends in the biotech industry for the year 2023. The industry is projected to experience significant expansion, driven by technological advancements and healthcare innovations. Investors, researchers, and healthcare professionals are closely monitoring these developments for opportunities and advancements in patient care.",
+      "news_link": "https://www.patsnap.com/resources/blog/biotech-investment-trends-in-2023/#:~:text=In%202022%2C%20the%20global%20biotechnology,(CAGR)%20of%2013.96%25."
+    },
+    {
+      "id": 10,
+      "title": "Stem Cell Therapy for Parkinson's Disease",
+      "news_details": "Clinical trials show promising results in using stem cell therapy to treat Parkinson's disease. Patients participating in the trials have reported improvements in motor function and quality of life. This therapy offers hope to individuals living with Parkinson's and may provide a more effective treatment option than currently available therapies.",
+      "news_link": "https://www.dvcstem.com/post/stem-cell-therapy-for-parkinsons"
+    }
+  ]
+  

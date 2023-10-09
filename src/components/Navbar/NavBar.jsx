@@ -27,16 +27,12 @@ const NavBar = () => {
                 isPending ? "pending" : isActive ? "active" : ""
             }
         >News And Insights</NavLink></li>
-        <li className="mr-8"><NavLink to='/policy'
+        <li className="mr-8"><NavLink to='/member'
 
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
-            }>Policy</NavLink></li>
-        <li className="mr-8"><NavLink to='/about'
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-            }
-        >About</NavLink></li>
+            }>Member</NavLink></li>
+       
 
 
 

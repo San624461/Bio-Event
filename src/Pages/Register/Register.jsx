@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import toast from 'react-hot-toast';
 
@@ -7,7 +7,8 @@ const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
-
+    const location = useLocation()
+    const navigate = useNavigate()
     const handleSignUp = async (e) => {
         e.preventDefault();
         if (isSubmitting) return;
@@ -29,6 +30,7 @@ const Register = () => {
                 const res = await createUser(email, password, `${firstname} ${lastName}`, photo);
                 console.log(res.user);
                 toast.success('User Created successfully');
+                navigate(location?.state ? location.state : '/')
             } catch (err) {
                 setError(err.message);
                 toast.error(err.message)
