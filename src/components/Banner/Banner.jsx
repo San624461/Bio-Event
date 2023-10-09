@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 const Banner = () => {
   useEffect(() => {
     Aos.init({
-      duration: 1500, // Set the duration of animations
+      duration: 900, // Set the duration of animations
       offset: 100, // Set the offset (in pixels) where the animation triggers
       easing: 'ease-in-out', // Set the easing for animations
       once: true, // Set whether animations should occur only once
@@ -19,7 +19,7 @@ const Banner = () => {
 
 
   return (
-    <div data-aos="fade-up"
+    <div data-aos="fade-u"
       className="relative h-[80vh] md:h-[70vh] lg:h-[80vh] bg-cover bg-center"
       style={{ backgroundImage: `url(${image})` }}
     >

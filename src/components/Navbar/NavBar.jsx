@@ -9,14 +9,6 @@ import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
-    useEffect(() => {
-        Aos.init({
-            duration: 1000,
-            offset: 200,
-            easing: 'ease-in-sine',
-            once: true,
-        });
-    }, []);
 
     const { user, logOut, createUser } = useContext(AuthContext)
     console.log(createUser)
@@ -51,7 +43,7 @@ const NavBar = () => {
     </>
 
     return (
-        <div data-aos="slide-down" className="navbar bg-base-100 mt-6 mb-3" id="sidebar">
+        <div className="navbar bg-base-100 mt-6 mb-3" id="sidebar">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className=" lg:hidden">

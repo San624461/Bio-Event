@@ -3,3 +3,8 @@
     text-decoration: underline;
     font-weight: bold;
 }
+
+.dropdown-content {
+    z-index: 2; 
+  
+  }
