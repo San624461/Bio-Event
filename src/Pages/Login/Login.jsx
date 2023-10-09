@@ -1,33 +1,47 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
-
+import toast from 'react-hot-toast';
 
 const Login = () => {
-    const { signIn, googleLogin } = useContext(AuthContext)
-    const handleLogIn = e => {
-        e.preventDefault()
-        const email = e.target.email.value
-        const password = e.target.password.value
-        const name = e.target.name.value
-        console.log(email, password)
-        signIn(email, password)
-            .then(result => console.log(result.user))
-            .catch(error => console.log(error))
+    const { signIn, googleLogin } = useContext(AuthContext);
 
-    }
+    const [error, setError] = useState('');
 
-    const handleGoogleSignIn = () => {
-        googleLogin()
-            .then()
-            .catch()
-    }
+    const handleLogIn = async (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        try {
+            await signIn(email, password);
+            // Use toast.success to display a success message
+            toast.success('Logged In successfully');
+        } catch (error) {
+            setError(error.message);
+            // Use toast.error to display the error message
+            toast.error(error.message);
+        }
+    };
+
+    const handleGoogleSignIn = async () => {
+        try {
+            await googleLogin();
+            // Use toast.success to display a success message
+            toast.success('Logged In successfully');
+        } catch (error) {
+            setError(error.message);
+            // Use toast.error to display the error message
+            toast.error(error.message);
+        }
+    };
+
     return (
         <div>
             <h1 className='text-3xl text-center mb-4 text-blue-400 font-bold bg-gray-200 p-3'>Login Now</h1>
 
-
             <form action="" onSubmit={handleLogIn}>
+
 
 
                 <label htmlFor="input-group-1" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
@@ -47,7 +61,7 @@ const Login = () => {
                             <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
                         </svg>
                     </span>
-                    <input name='name' type="text" id="website-admin" className="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Name" />
+                    <input name='name' type="text" className="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Name" />
                 </div>
                 <label htmlFor="website-admin" className="mt-3 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                 <div className="flex">
@@ -55,18 +69,21 @@ const Login = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     </span>
                     <input name='password'
-
-                        type="password" id="website-admin" className="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Password" />
+                        type="password" className="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Password" />
                 </div>
-                <button type="submit" className="text-white bg-blue-400 mt-4 mb-4 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log In</button>
+                <button
+                    type="submit" className="text-white bg-blue-400 mt-4 mb-4 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log In</button>
 
                 <p className='text-lg mt-3'>Do not have an account <Link to='/register' className='font-semibold text-blue-400'>Sign Up here</Link></p>
+
+
             </form>
-            <button
-                onClick={handleGoogleSignIn} >Google</button>
+            <p className='text-lg mt-3'>Do not have an account <Link to='/register' className='font-semibold text-blue-400'>Sign Up here</Link></p>
+
+            <button className='btn' onClick={handleGoogleSignIn}>Google</button>
+
+        
         </div>
-
-
     );
 };
 

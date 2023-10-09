@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 const Register = () => {
 
     const { createUser } = useContext(AuthContext)
+    const [success, setSuccess] = useState('')
 
     const [error, setError] = useState('')
     const handleSignUp = e => {
@@ -17,8 +18,12 @@ const Register = () => {
         const lastName = e.target.last_name.value
         const photo = e.target.photo.value
 
+
+        setError('')
+        setSuccess('')
         if (/^(?!.*[A-Z])(?!.*[^A-Za-z0-9]).{6,}$/.test(password)) {
             toast.error('Password Should be more than 6 characters, should contain a capital letter and a special character')
+            return;
         }
 
 
@@ -27,9 +32,10 @@ const Register = () => {
         createUser(email, password, firstname, lastName)
             .then(res => {
                 console.log(res.user)
+                setSuccess('User Created successfully')
             })
             .catch(error => {
-                setError(error)
+                setError(error.message)
             })
     }
 
@@ -77,7 +83,12 @@ const Register = () => {
                 <button type="submit" className="text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>
             <p className='text-lg mt-3'>Do not have an account <Link to='/login' className='font-semibold text-blue-400'>Log In here</Link></p>
-
+            {
+                error && toast.error(error)
+            }
+            {
+                success && toast.success('User Registered Successfully')
+            }
         </div>
     );
 };
