@@ -26,7 +26,7 @@ const Register = () => {
             setIsSubmitting(false);
         } else {
             try {
-                const res = await createUser(email, password, firstname, lastName);
+                const res = await createUser(email, password, `${firstname} ${lastName}`, photo);
                 console.log(res.user);
                 toast.success('User Created successfully');
             } catch (err) {

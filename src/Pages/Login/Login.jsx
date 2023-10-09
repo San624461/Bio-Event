@@ -1,12 +1,16 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import toast from 'react-hot-toast';
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-    const { signIn, googleLogin } = useContext(AuthContext);
+    const { signIn, googleLogin,createUser,user } = useContext(AuthContext);
+    // console.log(createUser)
 
     const [error, setError] = useState('');
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleLogIn = async (e) => {
         e.preventDefault();
@@ -17,6 +21,7 @@ const Login = () => {
             await signIn(email, password);
             // Use toast.success to display a success message
             toast.success('Logged In successfully');
+            navigate(location?.state ? location.state : '/')
         } catch (error) {
             setError(error.message);
             // Use toast.error to display the error message
@@ -29,6 +34,7 @@ const Login = () => {
             await googleLogin();
             // Use toast.success to display a success message
             toast.success('Logged In successfully');
+            navigate(location?.state ? location.state : '/')
         } catch (error) {
             setError(error.message);
             // Use toast.error to display the error message
@@ -38,7 +44,7 @@ const Login = () => {
 
     return (
         <div>
-            <h1 className='text-3xl text-center mb-4 text-blue-400 font-bold bg-gray-200 p-3'>Login Now</h1>
+            <h1 className='text-3xl text-center mb-5 text-blue-400 font-bold bg-gray-200 p-3'>Login Now</h1>
 
             <form action="" onSubmit={handleLogIn}>
 
@@ -78,11 +84,11 @@ const Login = () => {
 
 
             </form>
-            <p className='text-lg mt-3'>Do not have an account <Link to='/register' className='font-semibold text-blue-400'>Sign Up here</Link></p>
 
-            <button className='btn' onClick={handleGoogleSignIn}>Google</button>
 
-        
+            <button className='btn text-white bg-blue-400 border-none mb-4 mt-3' onClick={handleGoogleSignIn}> Log in with Google<FaGoogle></FaGoogle></button>
+
+
         </div>
     );
 };

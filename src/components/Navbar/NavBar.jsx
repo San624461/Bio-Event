@@ -6,8 +6,8 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const NavBar = () => {
 
-    const { user, logOut } = useContext(AuthContext)
-
+    const { user, logOut, createUser } = useContext(AuthContext)
+    console.log(user)
     const handleSignOut = () => {
         logOut()
             .then()
@@ -76,27 +76,37 @@ const NavBar = () => {
 
 
             <div className="ml-10 md:ml-32">
+            {user?.displayName && (
+                    <p className="text-sm">{user.displayName}</p>
+                )}
 
-                <div className="avatar ml-3">
-                    <div className="w-8 rounded-full">
-                        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                {user?.email && (
+                    <div className="avatar ml-3">
+                        <div className="w-8 rounded-full">
+                            <img src={user.photoURL} alt="User Avatar" />
+                        </div>
                     </div>
-                </div>
+                )}
+
+
 
 
                 {
                     user ? <button
-                    onClick={handleSignOut} className="btn bg-blue-400 ml-3 p-4 w-[60%] text-white">
+                        onClick={handleSignOut} className="btn bg-blue-400 ml-3 text-white pb-3 pt-3 w-[80%]text-white">
                         Sign Out
                     </button>
                         :
 
 
-                        <button className="btn bg-blue-400 ml-3 p-4 w-[60%] text-white">
+                        <button className="btn bg-blue-400 ml-3 pb-3 pt-3 w-[80%] text-white">
                             <Link to='/login'>Log In</Link>
                         </button>
                 }
-                {/* <button className="btn bg-white border-0"><FaSearch></FaSearch></button> */}
+                {
+                /* <button className="btn bg-white border-0"><FaSearch></FaSearch></button> */}
+
+
             </div>
         </div>
     );

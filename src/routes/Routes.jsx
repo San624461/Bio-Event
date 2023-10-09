@@ -9,23 +9,24 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Events from "../Pages/Events/Events";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element:<Root></Root>,
-        errorElement:<ErrorPage></ErrorPage>,
+        element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
-                path:'/',
-                element:<Home></Home>,
-                loader: ()=> fetch('/data.json')
-            }, 
+                path: '/',
+                element: <Home></Home>,
+                loader: () => fetch('/data.json')
+            },
             {
                 path: '/events/:id',
-                element: <Events></Events>,
-                loader: ()=> fetch('/data.json')
+                element: <PrivateRoute> <Events></Events></PrivateRoute>,
+                loader: () => fetch('/data.json')
             },
             {
                 path: '/newsandinsights',
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
-            }, 
+            },
             {
                 path: '/login',
                 element: <Login></Login>
